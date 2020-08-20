@@ -15,7 +15,12 @@ class CreateExpensesTable extends Migration
     {
         Schema::create('expenses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->unsigned();
+            $table->string('nome', 200);
+            $table->decimal('amount', 8, 2);
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

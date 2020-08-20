@@ -15,7 +15,13 @@ class CreateApprovalsTable extends Migration
     {
         Schema::create('approvals', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->unsigned();
+            $table->foreignId('id_expenses');
+            $table->string('status');
             $table->timestamps();
+
+            $table->foreign('id_expenses')->references('id')->on('expenses');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

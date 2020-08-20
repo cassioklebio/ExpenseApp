@@ -15,8 +15,16 @@ class CreateTypeExpensesTable extends Migration
     {
         Schema::create('type_expenses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->unsigned();
+            $table->foreignId('id_expenses');
+            $table->string('nome', 30);
+            $table->string('slug', 40);
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('id_expenses')->references('id')->on('expenses');
         });
+
     }
 
     /**
