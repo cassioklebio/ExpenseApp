@@ -13,7 +13,7 @@ class ApprovalRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,13 @@ class ApprovalRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'status' => 'required',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'required' => 'Este campo é obrigatório!'
         ];
     }
 }

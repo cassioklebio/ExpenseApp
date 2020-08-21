@@ -13,7 +13,7 @@ class TypeExpenseRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class TypeExpenseRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nome' => 'required',
+            'slug' => 'required'
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'required' => 'Este campo é obrigatório!'
         ];
     }
 }

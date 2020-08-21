@@ -1,11 +1,25 @@
 <?php
 
-namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+namespace App\Http\Controllers\Admin;
 
-class ApprovalController extends Controller
+use App\Http\Controllers\Controller;
+use App\Http\Requests\TypeExpenseRequest;
+use App\Models\TypeExpense;
+
+
+class TypeExpenseController extends Controller
 {
+
+    /**
+     * @var typeExpense
+     */
+    private $typeExpense;
+
+    public function __construct(TypeExpense $typeExpense)
+    {
+        $this->typeExpense = $typeExpense;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +27,8 @@ class ApprovalController extends Controller
      */
     public function index()
     {
-        //
+        $typeExpenses = $this->typeExpense->all();
+        return view('admin.typeExpense.index', compact('typeExpenses', 'listaBreadCrumb'));
     }
 
     /**
@@ -23,7 +38,7 @@ class ApprovalController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.typeExpense.index');
     }
 
     /**
@@ -32,9 +47,11 @@ class ApprovalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TypeExpenseRequest $request)
     {
-        //
+        $data = $request->all();
+        TypeExpense::create($data);
+        return $this->index();
     }
 
     /**
@@ -45,7 +62,7 @@ class ApprovalController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.typeExpense.detail', compact('id'));
     }
 
     /**
@@ -56,7 +73,8 @@ class ApprovalController extends Controller
      */
     public function edit($id)
     {
-        //
+        $typeExpense = $this->typeExpense->findOrfail($id);
+        return view('admin.typeExpense.detail', compact('$id'));
     }
 
     /**
@@ -66,9 +84,11 @@ class ApprovalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TypeExpenseRequest $request, $id)
     {
-        //
+        $data = $request->all();
+        $typeExpense = $this->typeExpense->find($id);
+        $typeExpense->update($data);
     }
 
     /**
@@ -79,6 +99,8 @@ class ApprovalController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $typeExpense = $this->typeExpense->find($id);
+        $typeExpense->delete();
+        return $this->index();
     }
 }
