@@ -49,6 +49,12 @@ $ npm install
 $ npm run dev
 $ php artisan serve 
 
+##### no navegardor digite
+127.0.0.1:8000
+##### ou
+localhost:8000
+
+
 crie um usuário de sua preferência 
  
 
