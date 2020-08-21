@@ -1,23 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    <pagina-component tamanho="12">
 
-                    {{ __('You are logged in!') }}
+
+        <painel-component subtitulo="Dashboard">
+            <hr>
+            <div class="row">
+
+                <div class="col-md-6">
+                    <caixa-component subtitulo="Despesas" url="{{route('admin.expense.index')}}" cor="blue"></caixa-component>
                 </div>
+
+                <div class="col-md-6">
+                    <caixa-component subtitulo="Aprovação" url="{{route('admin.approval.index')}}" cor="Gold"></caixa-component>
+                </div>
+                <div class="col-md-6">
+                    <caixa-component subtitulo="Histórico"  cor="Gold"></caixa-component>
+                </div>
+                <div class="col-md-6">
+                    <caixa-component subtitulo="Tipos de despesas" url="{{route('admin.typeExpense.index')}}" cor="orange"></caixa-component>
+                </div>
+
             </div>
-        </div>
-    </div>
-</div>
+
+        </painel-component>
+    </pagina-component>
 @endsection

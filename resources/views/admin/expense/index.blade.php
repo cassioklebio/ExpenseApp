@@ -3,21 +3,23 @@
 @section('content')
 
     <pagina-component tamanho="12">
-        {{-- <breadcrumb-component v-bind:lista="{{$listaBreadCrumb}}"></breadcrumb-component> --}}
 
-        <painel-component subtitulo="Lista de Estados">
+
+        <painel-component subtitulo="Despesas">
             <!-- Button trigger modal -->
-
+            <a type="button" class="btn btn-link" href="{{url('admin/expense/create')}}">
                 Cadastrar
             </a>
+            <a type="button" class="btn btn-link" href="{{url('/home')}}">
+                voltar
+            </a>
             <hr>
-
             <table class="table table-striped">
                 <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">Estado</th>
-                      <th scope="col">Sigla</th>
+                      <th scope="col">Nome</th>
+                      <th scope="col">Valor</th>
                       <th scope="col">Ações</th>
 
 
@@ -25,13 +27,6 @@
                   </thead>
                 <tbody>
 
-                    <tr>
-                        <td scope="row"></td>
-                        <td scope="row"></td>
-                        <td scope="row"></td>
-                        <td scope="row"></td>
-                    </tr>
-                @endforeach
                 </tbody>
             </table>
 
@@ -39,6 +34,7 @@
 
         </painel-component>
     </pagina-component>
+
 
 
 @endsection

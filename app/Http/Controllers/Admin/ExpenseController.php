@@ -18,6 +18,7 @@ class ExpenseController extends Controller
 
     public function __construct(Expense $expense)
     {
+        $this->expense = $expense;
     }
     /**
      * Display a listing of the resource.
@@ -26,8 +27,8 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-        $expense = $this->expense->all();
-        return view('admin.expense.index', compact('expense'));
+        $expenses = $this->expense->all();
+        return view('admin.expense.index', compact('expenses'));
     }
 
     /**

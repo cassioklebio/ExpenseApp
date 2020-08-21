@@ -28,7 +28,7 @@ class TypeExpenseController extends Controller
     public function index()
     {
         $typeExpenses = $this->typeExpense->all();
-        return view('admin.typeExpense.index', compact('typeExpenses', 'listaBreadCrumb'));
+        return view('admin.typeExpense.index', compact('typeExpenses'));
     }
 
     /**
@@ -38,7 +38,7 @@ class TypeExpenseController extends Controller
      */
     public function create()
     {
-        return view('admin.typeExpense.index');
+        return view('admin.typeExpense.create');
     }
 
     /**
