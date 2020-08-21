@@ -6,7 +6,7 @@
 
 
         <painel-component subtitulo="Despesas">
-            <!-- Button trigger modal -->
+
             <a type="button" class="btn btn-link" href="{{url('admin/expense/create')}}">
                 Cadastrar
             </a>
