@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+require('./formadd');
 
 window.Vue = require('vue');
 
@@ -35,3 +36,5 @@ Vue.component('caixa-component', require('./components/CaixaComponent.vue').defa
 const app = new Vue({
     el: '#app',
 });
+
+
