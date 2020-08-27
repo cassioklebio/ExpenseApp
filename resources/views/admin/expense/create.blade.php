@@ -18,7 +18,17 @@
                                         <label for="colFormLabel" class="col col-form-label">Despesa</label>
                                         <input type="text" class="form-control" name="despesa" placeholder="Despesa">
                                       </div>
-                                      <div class="col-4">
+                                      <div class="col">
+                                        <label for="colFormLabel" class="col col-form-label">tipo</label>
+                                        <select id="inputEstado" class="form-control">
+                                            <option selected>Escolher...</option>
+                                            <option>Energia</option>
+                                            <option>Aliemntação</option>
+                                            <option>Transporte</option>
+                                            <option>Educação</option>
+                                        </select>
+                                      </div>
+                                      <div class="col">
                                         <label for="colFormLabel" class="col col-form-label">Valor</label>
                                         <input type="text" class="form-control" name="valor" placeholder="Valor">
                                       </div>

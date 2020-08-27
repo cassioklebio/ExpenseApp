@@ -17,7 +17,7 @@
                     <caixa-component subtitulo="Aprovação" url="{{route('admin.approval.index')}}" cor="Gold"></caixa-component>
                 </div>
                 <div class="col-md-6">
-                    <caixa-component subtitulo="Histórico"  cor="Gold"></caixa-component>
+                    <caixa-component subtitulo="Histórico"   cor="Gold"></caixa-component>
                 </div>
                 <div class="col-md-6">
                     <caixa-component subtitulo="Tipos de despesas" url="{{route('admin.typeExpense.index')}}" cor="orange"></caixa-component>

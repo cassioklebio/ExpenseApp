@@ -5,12 +5,9 @@
     <pagina-component tamanho="12">
 
 
-        <painel-component subtitulo="Despesas para aprovação">
+        <painel-component subtitulo="Historico de despesas">
 
-            <a type="button" class="btn btn-link" href="{{url('admin/approval/create')}}">
-                Cadastrar
-            </a>
-            <a type="button" class="btn btn-link" href="{{url('/home')}}">
+                        <a type="button" class="btn btn-link" href="{{url('/home')}}">
                 voltar
             </a>
             </a>
